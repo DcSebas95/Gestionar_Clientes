@@ -5,7 +5,7 @@
         <br>
         <div class="card">
             <p-table #dt [value]="listaClientes" [rows]="10" [paginator]="true" [tableStyle]="{'min-width': '75rem'}"
-                currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                currentPageReportTemplate="Parte {first} a {last} de {totalRecords} en total"
                 [showCurrentPageReport]="true"
                 [globalFilterFields]="['cliente_id','nit','nombre','apellido','email','telefono','direccion']">
 
