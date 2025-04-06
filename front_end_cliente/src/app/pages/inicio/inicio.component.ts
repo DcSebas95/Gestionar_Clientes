@@ -18,11 +18,12 @@ export class InicioComponent {
 
   private ClienteServcio = inject(ClientesService)
   public listaClientes: Cliente[] = [];
-  public displayedColumns: string[] = ['ID', 'NIT', 'NOMBRE', 'APELLIDO', 'EMAIL', 'TELEFONO', 'DIRECCION', 'ACCION'];
+  public displayedColumns: string[] = ['cliente_id', 'NIT', 'NOMBRE', 'APELLIDO', 'EMAIL', 'TELEFONO', 'DIRECCION', 'ACCION'];
 
   obtenerCliente() {
     this.ClienteServcio.lista().subscribe({
       next: (data) => {
+        console.log(data);
         if (data.length > 0) {
           this.listaClientes = data;
         }
@@ -31,7 +32,14 @@ export class InicioComponent {
       }
     })
   }
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+
+
+  }
+
+  ngOnInit(): void {
+    this.obtenerCliente();
+  }
 
   nuevo() {
     this.router.navigate(['/cliente', 0]);

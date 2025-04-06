@@ -7,7 +7,7 @@ using Clientes.DATA;
 namespace Clientes.Controllers;
 
 
-[Route("api/controller")]
+[Route("api/cliente")]
 [ApiController]
 public class ClientesController : ControllerBase
 {

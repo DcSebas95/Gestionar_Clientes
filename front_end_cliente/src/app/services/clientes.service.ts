@@ -11,7 +11,7 @@ import { ResponseApi } from '../models/ReponseApi';
 })
 export class ClientesService {
   private http = inject(HttpClient);
-  private apiURL: string = appsetting.api_URL + 'Cliente';
+  private apiURL: string = appsetting.api_URL + '/cliente';
   constructor() { }
 
   lista() {

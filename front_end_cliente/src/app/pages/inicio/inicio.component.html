@@ -1,0 +1,45 @@
+<div class="mb-4 p-8" style="width: 70%; margin: 50px auto;">
+    <p-card header="Gestionador de clientes">
+        <br>
+        <p-button label="Nuevo cliente" (click)="nuevo()"></p-button>
+        <br>
+        <div class="card">
+            <p-table #dt [value]="listaClientes" [rows]="10" [paginator]="true" [tableStyle]="{'min-width': '75rem'}"
+                currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                [showCurrentPageReport]="true"
+                [globalFilterFields]="['cliente_id','nit','nombre','apellido','email','telefono','direccion']">
+
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>ID</th>
+                        <th>NIT</th>
+                        <th>NOMBRE</th>
+                        <th>APELLIDO</th>
+                        <th>EMAIL</th>
+                        <th>TELEFONO</th>
+                        <th>DIRECCION</th>
+                        <th>ACCION</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-cliente>
+                    <tr>
+                        <td>{{ cliente.cliente_id }}</td>
+                        <td>{{ cliente.nit }}</td>
+                        <td>{{ cliente.nombre }}</td>
+                        <td>{{ cliente.apellido }}</td>
+                        <td>{{ cliente.email }}</td>
+                        <td>{{ cliente.telefono }}</td>
+                        <td>{{ cliente.direccion }}</td>
+                        <td>
+
+                            <p-button icon="pi pi-pencil" class="mr-2" [rounded]="true" [outlined]="true"
+                                (click)="editar(cliente)"></p-button>
+                            <p-button icon="pi pi-trash" severity="danger" [rounded]="true" [outlined]="true"
+                                (click)="eliminar(cliente)"></p-button>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </p-card>
+</div>
