@@ -1,15 +1,19 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { InputTextModule } from 'primeng/inputtext';
-import { Message } from 'primeng/message';
 import { ButtonModule } from 'primeng/button';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ClientesService } from '../../services/clientes.service';
 import { Router } from '@angular/router';
 import { Cliente } from '../../models/clientes';
+import { CardModule } from 'primeng/card';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-cliente',
-  imports: [Message, InputTextModule, ButtonModule],
+  imports: [InputTextModule, ButtonModule, CardModule, ReactiveFormsModule, FormsModule],
   templateUrl: './cliente.component.html',
   styleUrl: './cliente.component.css'
 })

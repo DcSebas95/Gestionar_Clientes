@@ -1,13 +1,45 @@
-<div class="card flex justify-center" style=" width: 40%; margin: 50px auto">
-    <div class="flex flex-col gap-4">
-        <p-message severity="error" icon="pi pi-times-circle" styleClass="mb-2">Validation Failed</p-message>
-        <div class="flex flex-col gap-1">
-            <input pInputText placeholder="Username" aria-label="username" class="ng-invalid ng-dirty" />
-            <p-message severity="error" variant="simple" size="small">Username is required</p-message>
-        </div>
-        <div class="flex flex-col gap-1">
-            <input pInputText placeholder="Email" aria-label="email" class="ng-invalid ng-dirty" />
-            <p-message severity="error" variant="simple" size="small">Email is not valid</p-message>
-        </div>
-    </div>
+<div class="container" style="width: 30%; padding: 30px; margin: 50px auto;">
+    <p-card header="Ingreso de Datos" [style]="{'text-align': 'center'}">
+        <form [formGroup]="formCliente">
+
+            <div class="p-fluid">
+                <div class="p-field">
+                    <label for="nit">NIT</label>
+                    <input id="nit" type="text" pInputText formControlName="nit" />
+                </div>
+                <br>
+                <div class="p-field">
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" type="text" pInputText formControlName="nombre" />
+                </div>
+                <br>
+                <div class="p-field">
+                    <label for="apellido">Apellido</label>
+                    <input id="apellido" type="text" pInputText formControlName="apellido" />
+                </div>
+                <br>
+                <div class="p-field">
+                    <label for="email">email</label>
+                    <input id="email" type="text" pInputText formControlName="email" />
+                </div>
+                <br>
+                <div class="p-field">
+                    <label for="telefono">Teléfono</label>
+                    <input id="telefono" type="text" pInputText formControlName="telefono" />
+                </div>
+                <br>
+                <div class="p-field">
+                    <label for="direccion">Dirección</label>
+                    <input id="direccion" type="text" pInputText formControlName="direccion" />
+                </div>
+                <br>
+                <div class="p-field" style="text-align: center; margin-top: 20px;">
+                    <button pButton type="submit" label="Guardar" (click)="guardar()"></button>
+                    <button pButton type="button" label="Volver" (click)="volver()" class="p-button-secondary"
+                        style="margin-left: 10px;"></button>
+                </div>
+            </div>
+
+        </form>
+    </p-card>
 </div>
